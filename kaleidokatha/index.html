@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaleidokatha - Experience the Vibrant Arts of Kerala</title>
+    <meta name="description" content="Immerse yourself in Kerala's rich cultural heritage through interactive maps, traditional art forms, and storytelling experiences.">
+    <meta name="keywords" content="Kerala, traditional arts, culture, travel, kathakali, theyyam, mohiniyattam">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Kaleidokatha</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#regions" class="nav-link">Regions</a>
+                <a href="pages/art-forms.html" class="nav-link">Art Forms</a>
+                <a href="pages/about.html" class="nav-link">About</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+                <a href="pages/login.html" class="nav-link login-nav">Login</a>
+            </div>
+            <div class="nav-hamburger" id="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Experience the Vibrant Arts of Kerala</h1>
+            <p class="hero-subtitle fade-in-delay">Discover the rich cultural heritage through interactive maps and immersive storytelling</p>
+            <button class="cta-button fade-in-delay-2" onclick="window.location.href='pages/login.html'">
+                Login Now <i class="fas fa-sign-in-alt"></i>
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="regions" class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Kerala's Traditional Regions</h2>
+                <p class="section-subtitle">Discover the rich cultural heritage through Kerala's historic divisions</p>
+            </div>
+            <div class="districts-container">
+                <div id="regions-grid" class="regions-grid">
+                        
+                        <!-- Malabar Districts (Hidden initially) -->
+                        <div class="region-districts" data-region-districts="malabar" style="display: none;">
+                            <button class="district-button" data-district="kasaragod">
+                                <div class="district-name">Kasaragod</div>
+                                <div class="district-subtitle">Land of Forts</div>
+                            </button>
+                            <button class="district-button" data-district="kannur">
+                                <div class="district-icon">🎭</div>
+                                <div class="district-name">Kannur</div>
+                                <div class="district-subtitle">Land of Looms</div>
+                            </button>
+                            <button class="district-button" data-district="wayanad">
+                                <div class="district-icon">🌿</div>
+                                <div class="district-name">Wayanad</div>
+                                <div class="district-subtitle">Green Paradise</div>
+                            </button>
+                            <button class="district-button" data-district="kozhikode">
+                                <div class="district-icon">🏖️</div>
+                                <div class="district-name">Kozhikode</div>
+                                <div class="district-subtitle">City of Spices</div>
+                            </button>
+                            <button class="district-button" data-district="malappuram">
+                                <div class="district-icon">🕌</div>
+                                <div class="district-name">Malappuram</div>
+                                <div class="district-subtitle">Cultural Heritage</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                        
+                        <!-- Central Kerala Districts (Hidden initially) -->
+                        <div class="region-districts" data-region-districts="central" style="display: none;">
+                            <button class="district-button" data-district="palakkad">
+                                <div class="district-icon">🌾</div>
+                                <div class="district-name">Palakkad</div>
+                                <div class="district-subtitle">Gateway of Kerala</div>
+                            </button>
+                            <button class="district-button" data-district="thrissur">
+                                <div class="district-icon">🎪</div>
+                                <div class="district-name">Thrissur</div>
+                                <div class="district-subtitle">Cultural Capital</div>
+                            </button>
+                            <button class="district-button" data-district="ernakulam">
+                                <div class="district-icon">🏙️</div>
+                                <div class="district-name">Ernakulam</div>
+                                <div class="district-subtitle">Queen of Arabian Sea</div>
+                            </button>
+                            <button class="district-button" data-district="idukki">
+                                <div class="district-icon">⛰️</div>
+                                <div class="district-name">Idukki</div>
+                                <div class="district-subtitle">Spice Garden</div>
+                            </button>
+                        </div>
+                    </div>
+
+                   
+                        
+                        <!-- Travancore Districts (Hidden initially) -->
+                        <div class="region-districts" data-region-districts="travancore" style="display: none;">
+                            <button class="district-button" data-district="kottayam">
+                                <div class="district-icon">📚</div>
+                                <div class="district-name">Kottayam</div>
+                                <div class="district-subtitle">Land of Letters</div>
+                            </button>
+                            <button class="district-button" data-district="alappuzha">
+                                <div class="district-icon">🛶</div>
+                                <div class="district-name">Alappuzha</div>
+                                <div class="district-subtitle">Venice of East</div>
+                            </button>
+                            <button class="district-button" data-district="pathanamthitta">
+                                <div class="district-icon">🛕</div>
+                                <div class="district-name">Pathanamthitta</div>
+                                <div class="district-subtitle">Pilgrimage Capital</div>
+                            </button>
+                            <button class="district-button" data-district="kollam">
+                                <div class="district-icon">🏖️</div>
+                                <div class="district-name">Kollam</div>
+                                <div class="district-subtitle">Cashew Capital</div>
+                            </button>
+                            <button class="district-button" data-district="thiruvananthapuram">
+                                <div class="district-icon">🏛️</div>
+                                <div class="district-name">Thiruvananthapuram</div>
+                                <div class="district-subtitle">Capital City</div>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Districts Grid (Hidden initially, shown when region is selected) -->
+                <div id="districts-grid" class="districts-grid" style="display: none;">
+                    <div class="back-to-regions">
+                        <button class="back-btn" onclick="showRegions()">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Regions
+                        </button>
+                        <h3 id="selected-region-title" class="selected-region-title"></h3>
+                    </div>
+                    
+                    <!-- Malabar Districts -->
+                    <div class="region-districts" data-region-districts="malabar" style="display: none;">
+                        <button class="district-button" data-district="kasaragod">
+                            <div class="district-icon">🏰</div>
+                            <div class="district-name">Kasaragod</div>
+                            <div class="district-subtitle">Land of Forts</div>
+                        </button>
+                        <button class="district-button" data-district="kannur">
+                            <div class="district-icon">🎭</div>
+                            <div class="district-name">Kannur</div>
+                            <div class="district-subtitle">Land of Looms</div>
+                        </button>
+                        <button class="district-button" data-district="wayanad">
+                            <div class="district-icon">🌿</div>
+                            <div class="district-name">Wayanad</div>
+                            <div class="district-subtitle">Green Paradise</div>
+                        </button>
+                        <button class="district-button" data-district="kozhikode">
+                            <div class="district-icon">🏖️</div>
+                            <div class="district-name">Kozhikode</div>
+                            <div class="district-subtitle">City of Spices</div>
+                        </button>
+                        <button class="district-button" data-district="malappuram">
+                            <div class="district-icon">🕌</div>
+                            <div class="district-name">Malappuram</div>
+                            <div class="district-subtitle">Cultural Heritage</div>
+                        </button>
+                    </div>
+
+                    <!-- Central Kerala Districts -->
+                    <div class="region-districts" data-region-districts="central" style="display: none;">
+                        <button class="district-button" data-district="palakkad">
+                            <div class="district-icon">🌾</div>
+                            <div class="district-name">Palakkad</div>
+                            <div class="district-subtitle">Rice Bowl</div>
+                        </button>
+                        <button class="district-button" data-district="thrissur">
+                            <div class="district-icon">🎆</div>
+                            <div class="district-name">Thrissur</div>
+                            <div class="district-subtitle">Cultural Capital</div>
+                        </button>
+                        <button class="district-button" data-district="ernakulam">
+                            <div class="district-icon">🏢</div>
+                            <div class="district-name">Ernakulam</div>
+                            <div class="district-subtitle">Commercial Hub</div>
+                        </button>
+                        <button class="district-button" data-district="idukki">
+                            <div class="district-icon">⛰️</div>
+                            <div class="district-name">Idukki</div>
+                            <div class="district-subtitle">Hill Station</div>
+                        </button>
+                    </div>
+
+                    <!-- Travancore Districts -->
+                    <div class="region-districts" data-region-districts="travancore" style="display: none;">
+                        <button class="district-button" data-district="kottayam">
+                            <div class="district-icon">📚</div>
+                            <div class="district-name">Kottayam</div>
+                            <div class="district-subtitle">Land of Letters</div>
+                        </button>
+                        <button class="district-button" data-district="alappuzha">
+                            <div class="district-icon">🚤</div>
+                            <div class="district-name">Alappuzha</div>
+                            <div class="district-subtitle">Venice of East</div>
+                        </button>
+                        <button class="district-button" data-district="pathanamthitta">
+                            <div class="district-icon">🕉️</div>
+                            <div class="district-name">Pathanamthitta</div>
+                            <div class="district-subtitle">Pilgrimage Capital</div>
+                        </button>
+                        <button class="district-button" data-district="kollam">
+                            <div class="district-icon">🚢</div>
+                            <div class="district-name">Kollam</div>
+                            <div class="district-subtitle">Ancient Port</div>
+                        </button>
+                        <button class="district-button" data-district="thiruvananthapuram">
+                            <div class="district-icon">🏛️</div>
+                            <div class="district-name">Thiruvananthapuram</div>
+                            <div class="district-subtitle">Capital City</div>
+                        </button>
+                    </div>
+                </div>
+                    
+                    <!-- Malabar Region (Northern Kerala) -->
+                    <div class="region-section">
+                        <h3 class="region-title">
+                            
+                            Malabar
+                            <span class="region-subtitle">Northern Kerala</span>
+                        </h3>
+                        <div class="region-districts">
+                            <button class="district-button" data-district="kasaragod">
+                              
+                                <div class="district-name">Kasaragod</div>
+                                <div class="district-subtitle">Land of Forts</div>
+                            </button>
+                            <button class="district-button" data-district="kannur">
+                                
+                                <div class="district-name">Kannur</div>
+                                <div class="district-subtitle">Land of Looms</div>
+                            </button>
+                            <button class="district-button" data-district="wayanad">
+                                
+                                <div class="district-name">Wayanad</div>
+                                <div class="district-subtitle">Green Paradise</div>
+                            </button>
+                            <button class="district-button" data-district="kozhikode">
+                                <div class="district-name">Kozhikode</div>
+                                <div class="district-subtitle">City of Spices</div>
+                            </button>
+                            <button class="district-button" data-district="malappuram">
+                                
+                                <div class="district-name">Malappuram</div>
+                                <div class="district-subtitle">Cultural Heritage</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Central Kerala (Kochi Region) -->
+                    <div class="region-section">
+                        <h3 class="region-title">
+                            
+                            Central Kerala
+                            <span class="region-subtitle">Kochi Region</span>
+                        </h3>
+                        <div class="region-districts">
+                            <button class="district-button" data-district="palakkad">
+                               
+                                <div class="district-name">Palakkad</div>
+                                <div class="district-subtitle">Rice Bowl</div>
+                            </button>
+                            <button class="district-button" data-district="thrissur">
+                               
+                                <div class="district-name">Thrissur</div>
+                                <div class="district-subtitle">Cultural Capital</div>
+                            </button>
+                            <button class="district-button" data-district="ernakulam">
+                             
+                                <div class="district-name">Ernakulam</div>
+                                <div class="district-subtitle">Commercial Hub</div>
+                            </button>
+                            <button class="district-button" data-district="idukki">
+                              
+                                <div class="district-name">Idukki</div>
+                                <div class="district-subtitle">Hill Station</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Travancore Region (Southern Kerala) -->
+                    <div class="region-section">
+                        <h3 class="region-title">
+                            
+                            Travancore
+                            <span class="region-subtitle">Southern Kerala</span>
+                        </h3>
+                        <div class="region-districts">
+                            <button class="district-button" data-district="kottayam">
+                               
+                                <div class="district-name">Kottayam</div>
+                                <div class="district-subtitle">Land of Letters</div>
+                            </button>
+                            <button class="district-button" data-district="alappuzha">
+                              
+                                <div class="district-name">Alappuzha</div>
+                                <div class="district-subtitle">Venice of East</div>
+                            </button>
+                            <button class="district-button" data-district="pathanamthitta">
+                               
+                                <div class="district-name">Pathanamthitta</div>
+                                <div class="district-subtitle">Pilgrimage Capital</div>
+                            </button>
+                            <button class="district-button" data-district="kollam">
+                               
+                                <div class="district-name">Kollam</div>
+                                <div class="district-subtitle">Ancient Port</div>
+                            </button>
+                            <button class="district-button" data-district="thiruvananthapuram">
+                                
+
+                                <div class="district-name">Thiruvananthapuram</div>
+                                <div class="district-subtitle">Capital City</div>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="district-info" class="district-info-panel">
+                    <h3 id="district-name">Select a District</h3>
+                    <p id="district-description">Click on any district to learn about its traditional art forms and cultural significance.</p>
+                    <div id="district-arts" class="district-arts"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Art Forms Section -->
+    <section class="featured-arts">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Art Forms</h2>
+                <p class="section-subtitle">Discover Kerala's most captivating traditional performances</p>
+            </div>
+            <div class="arts-grid">
+                <div class="art-card" onclick="showArtFormDetails('kathakali')">
+                    <div class="art-image">
+                        <div class="art-overlay">
+                            <button class="explore-btn">🎭 View Details</button>
+                        </div>
+                    </div>
+                    <div class="art-content">
+                        <h3>Kathakali</h3>
+                        <p>The classical dance-drama that combines elaborate costumes, makeup, and expressive storytelling.</p>
+                        <div class="art-features">
+                            <span class="feature-tag">Photos</span>
+                            <span class="feature-tag">Stories</span>
+                            <span class="feature-tag">Events</span>
+                            <span class="feature-tag">Artists</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card" onclick="showArtFormDetails('theyyam')">
+                    <div class="art-image">
+                        <div class="art-overlay">
+                            <button class="explore-btn">🎭 View Details</button>
+                        </div>
+                    </div>
+                    <div class="art-content">
+                        <h3>Theyyam</h3>
+                        <p>Ancient ritual art form that transforms performers into living deities through vibrant costumes and dance.</p>
+                        <div class="art-features">
+                            <span class="feature-tag">Photos</span>
+                            <span class="feature-tag">Stories</span>
+                            <span class="feature-tag">Events</span>
+                            <span class="feature-tag">Artists</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card" onclick="showArtFormDetails('mohiniyattam')">
+                    <div class="art-image">
+                        <div class="art-overlay">
+                            <button class="explore-btn">🎭 View Details</button>
+                        </div>
+                    </div>
+                    <div class="art-content">
+                        <h3>Mohiniyattam</h3>
+                        <p>The graceful classical dance form that embodies the feminine divine through flowing movements.</p>
+                        <div class="art-features">
+                            <span class="feature-tag">Photos</span>
+                            <span class="feature-tag">Stories</span>
+                            <span class="feature-tag">Events</span>
+                            <span class="feature-tag">Artists</span>
+                        </div>
+                    </div>
+                </div>
+                            <span class="feature-tag">Artists</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Kaleidokatha Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Kaleidokatha</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Interactive Exploration</h3>
+                    <p>Navigate through Kerala's cultural landscape with our immersive interactive map</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Curation</h3>
+                    <p>Content curated by cultural experts and traditional art practitioners</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Cultural Preservation</h3>
+                    <p>Supporting local artists and preserving traditional art forms for future generations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What People Say</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p>"Kaleidokatha opened my eyes to the incredible diversity of Kerala's art forms. The interactive map made exploring so engaging!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Priya Menon</h4>
+                            <span>Cultural Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a student of Indian classical arts, this platform provided invaluable insights into Kerala's rich cultural heritage."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Arjun Kumar</h4>
+                            <span>Dance Student</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The storytelling approach and visual quality made learning about traditional arts an immersive experience."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Sarah Williams</h4>
+                            <span>Tourist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kaleidokatha</h3>
+                    <p>Preserving and celebrating Kerala's rich cultural heritage through immersive digital experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#regions">Regions</a></li>
+                        <li><a href="pages/art-forms.html">Art Forms</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@kaleidokatha.com</p>
+                        <p><i class="fas fa-phone"></i> +91 484 123 4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Kochi, Kerala, India</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with Kerala's cultural events and new content.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kaleidokatha. All rights reserved. | Preserving Kerala's Cultural Heritage</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/real-kerala-map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/art-form-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District Page | Kaleidokatha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        .district-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--golden) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .district-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .district-content {
+            position: relative;
+            z-index: 1;
+        }
+        .district-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .district-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .coming-soon-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .coming-soon-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .coming-soon-icon {
+            font-size: 4rem;
+            color: var(--golden);
+            margin-bottom: 2rem;
+        }
+        .coming-soon-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .coming-soon-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .navigation-section {
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        .back-button i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="district-hero">
+        <div class="container">
+            <div class="district-content animate-fadeInUp">
+                <h1 class="district-title" id="district-name">Loading...</h1>
+                <p class="district-subtitle" id="district-description">Discovering the cultural heritage...</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="coming-soon-section">
+        <div class="container">
+            <div class="coming-soon-card animate-fadeInUp">
+                <div class="coming-soon-icon">🏗️</div>
+                <h2 class="coming-soon-title">Detailed Page Coming Soon</h2>
+                <p class="coming-soon-text">We're currently crafting a detailed exploration of this district's rich cultural heritage. In the meantime, you can explore other districts or return to the main map to learn about the traditional art forms.</p>
+                <p class="coming-soon-text"><strong>Cultural richness awaits discovery!</strong></p>
+            </div>
+        </div>
+    </main>
+
+    <div class="navigation-section">
+        <div class="container">
+            <a href="../index.html" class="back-button animate-fadeInUp">
+                <i class="fas fa-arrow-left"></i>
+                Back to Main Map
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Get district info from URL or use default
+        function getDistrictFromUrl() {
+            const path = window.location.pathname;
+            const filename = path.split('/').pop();
+            const districtId = filename.replace('district-', '').replace('.html', '');
+            return districtId;
+        }
+
+        // District data (simplified version)
+        const districtData = {
+            'kottayam': {
+                name: 'Kottayam',
+                description: 'Land of letters and latex, center of Malayalam literature'
+            },
+            'idukki': {
+                name: 'Idukki',
+                description: 'Hill station known for spice gardens and tribal cultures'
+            },
+            'palakkad': {
+                name: 'Palakkad',
+                description: 'Gateway to Kerala, known for classical music and dance'
+            },
+            'malappuram': {
+                name: 'Malappuram',
+                description: 'Cultural melting pot with rich Islamic traditions and folk arts'
+            },
+            'kozhikode': {
+                name: 'Kozhikode',
+                description: 'City of spices with vibrant trade history and cultural heritage'
+            },
+            'wayanad': {
+                name: 'Wayanad',
+                description: 'Tribal homeland with ancient cave paintings and indigenous arts'
+            },
+            'kasaragod': {
+                name: 'Kasaragod',
+                description: 'Northernmost district known for Yakshagana and diverse cultures'
+            }
+        };
+
+        // Update page content based on district
+        document.addEventListener('DOMContentLoaded', () => {
+            const districtId = getDistrictFromUrl();
+            const data = districtData[districtId];
+            
+            if (data) {
+                document.getElementById('district-name').textContent = data.name;
+                document.getElementById('district-description').textContent = data.description;
+                document.title = `${data.name} | Kaleidokatha`;
+            } else {
+                document.getElementById('district-name').textContent = 'Kerala District';
+                document.getElementById('district-description').textContent = 'Exploring Kerala\'s cultural heritage';
+            }
+        });
+    </script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

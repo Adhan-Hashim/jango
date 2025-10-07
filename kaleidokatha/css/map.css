@@ -1,0 +1,1291 @@
+/* Region Cards Layout */
+.districts-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.regions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Region Section Styling */
+.region-section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.region-section-title {
+    color: rgba(139, 69, 19, 0.9);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+}
+
+/* Districts in Region */
+.districts-in-region {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Region Card Styling */
+.region-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.region-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 69, 19, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Region Header */
+.region-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.region-header:hover .region-arrow {
+    color: rgba(139, 69, 19, 0.8);
+    transform: translateX(4px);
+}
+
+/* Region Icon */
+.region-icon {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 69, 19, 0.2);
+    border-radius: 10px;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+/* Region Content */
+.region-content {
+    flex: 1;
+}
+
+.region-name {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.region-desc {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+/* Region Arrow */
+.region-arrow {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.region-header:hover .region-arrow {
+    color: rgba(139, 69, 19, 0.8);
+    transform: rotate(180deg);
+}
+
+.region-card.expanded .region-arrow {
+    transform: rotate(180deg);
+}
+
+/* Region Districts (within each region) */
+.region-districts {
+    padding: 0 24px 20px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.district-count, .art-count {
+    background: var(--cream);
+    color: var(--dark-text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .regions-grid {
+        padding: 16px;
+        gap: 20px;
+    }
+    
+    .region-section {
+        padding: 20px;
+    }
+    
+    .region-section-title {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+    }
+    
+    .districts-in-region {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .regions-grid {
+        padding: 12px;
+        gap: 16px;
+    }
+    
+    .region-section {
+        padding: 16px;
+    }
+    
+    .region-section-title {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    
+    .districts-in-region {
+        gap: 10px;
+    }
+}
+
+/* Districts Grid (Hidden initially) */
+.districts-grid {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--cream) 0%, #f8fffe 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-regions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--cream);
+}
+
+.back-btn {
+    background: linear-gradient(135deg, var(--orange-accent) 0%, var(--golden) 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(255, 140, 66, 0.3);
+}
+
+.show-districts-btn {
+    background: linear-gradient(135deg, var(--orange-accent) 0%, var(--golden) 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.show-districts-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 140, 66, 0.3);
+}
+
+.selected-region-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.region-districts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.district-button {
+    background: linear-gradient(135deg, white 0%, #fafafa 100%);
+    border: 2px solid var(--light-green);
+    border-radius: 15px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.district-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.district-button:hover::before {
+    left: 100%;
+}
+
+.district-button:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--orange-accent);
+    box-shadow: 0 15px 40px rgba(255, 140, 66, 0.2);
+    background: linear-gradient(135deg, #fff 0%, var(--cream) 100%);
+}
+
+.district-button.active {
+    background: linear-gradient(135deg, var(--orange-accent) 0%, var(--golden) 100%);
+    border-color: var(--golden);
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(255, 140, 66, 0.3);
+}
+
+.district-button.active .district-name,
+.district-button.active .district-subtitle {
+    color: white;
+}
+
+.district-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.district-button:hover .district-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Kozhikode district specific background image */
+.district-button[data-district="kozhikode"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/kozhikode.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kozhikode"] .district-name,
+.district-button[data-district="kozhikode"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kozhikode"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/kozhikode.jpg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Malappuram district specific background image */
+.district-button[data-district="malappuram"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/malappuram.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="malappuram"] .district-name,
+.district-button[data-district="malappuram"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="malappuram"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/malappuram.jpeg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Wayanad district specific background image */
+.district-button[data-district="wayanad"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/wayanad.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="wayanad"] .district-name,
+.district-button[data-district="wayanad"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="wayanad"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/wayanad.jpeg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Kannur district specific background image */
+.district-button[data-district="kannur"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/kannur.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kannur"] .district-name,
+.district-button[data-district="kannur"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kannur"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/kannur.jpeg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Kasaragod district specific background image */
+.district-button[data-district="kasaragod"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/kasaragod.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kasaragod"] .district-name,
+.district-button[data-district="kasaragod"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kasaragod"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/kasaragod.avif');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Palakkad district specific background image */
+.district-button[data-district="palakkad"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/palakkad.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="palakkad"] .district-name,
+.district-button[data-district="palakkad"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="palakkad"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/palakkad.jpg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Ernakulam district specific background image */
+.district-button[data-district="ernakulam"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/eranakulam.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="ernakulam"] .district-name,
+.district-button[data-district="ernakulam"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="ernakulam"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/eranakulam.jpeg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Thrissur district specific background image */
+.district-button[data-district="thrissur"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/thrissur.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="thrissur"] .district-name,
+.district-button[data-district="thrissur"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="thrissur"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/thrissur.jpeg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Idukki district specific background image */
+.district-button[data-district="idukki"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/iduukki.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="idukki"] .district-name,
+.district-button[data-district="idukki"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="idukki"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/iduukki.jpg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Alappuzha district specific background image */
+.district-button[data-district="alappuzha"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/alappuzha.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="alappuzha"] .district-name,
+.district-button[data-district="alappuzha"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="alappuzha"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/alappuzha.webp');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Kollam district specific background image */
+.district-button[data-district="kollam"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/kollam.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kollam"] .district-name,
+.district-button[data-district="kollam"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kollam"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/kollam.jpg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Thiruvananthapuram district specific background image */
+.district-button[data-district="thiruvananthapuram"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/thiruvananthapuram.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="thiruvananthapuram"] .district-name,
+.district-button[data-district="thiruvananthapuram"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="thiruvananthapuram"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/thiruvananthapuram.webp');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Kottayam district specific background image */
+.district-button[data-district="kottayam"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/kottayamm.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kottayam"] .district-name,
+.district-button[data-district="kottayam"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="kottayam"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/kottayamm.jpg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Pathanamthitta district specific background image */
+.district-button[data-district="pathanamthitta"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/pathanamthitta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="pathanamthitta"] .district-name,
+.district-button[data-district="pathanamthitta"] .district-subtitle {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district="pathanamthitta"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/pathanamthitta.jpg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Yakshagana art form specific background image */
+.district-button[data-district*="yakshagana"],
+.art-form-card[data-art="Yakshagana"] {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../images/yakshagayam.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district*="yakshagana"] .district-name,
+.district-button[data-district*="yakshagana"] .district-subtitle,
+.art-form-card[data-art="Yakshagana"] .art-name {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.district-button[data-district*="yakshagana"]:hover,
+.art-form-card[data-art="Yakshagana"]:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/yakshagayam.jpg');
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.district-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.district-subtitle {
+    font-size: 0.85rem;
+    color: var(--light-text);
+    font-weight: 400;
+    opacity: 0.8;
+    transition: color 0.3s ease;
+}
+
+/* Responsive Design for Region Cards and Districts */
+@media (max-width: 1024px) {
+    .districts-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .regions-grid,
+    .districts-grid {
+        padding: 1.5rem;
+    }
+    
+    .region-card {
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    
+    .region-card-arrow {
+        display: none;
+    }
+    
+    .region-card-icon {
+        font-size: 3rem;
+    }
+    
+    .region-card-title {
+        font-size: 1.8rem;
+    }
+    
+    .region-districts {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .back-to-regions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .regions-grid,
+    .districts-grid {
+        padding: 1rem;
+    }
+    
+    .region-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .region-card-title {
+        font-size: 1.5rem;
+    }
+    
+    .region-card-icon {
+        font-size: 2.5rem;
+        justify-self: center;
+    }
+    
+    .region-card-stats {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .region-districts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .district-button {
+        padding: 1rem;
+    }
+    
+    .district-icon {
+        font-size: 2rem;
+    }
+    
+    .district-name {
+        font-size: 1rem;
+    }
+    
+    .back-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .selected-region-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .region-card {
+        padding: 1rem;
+    }
+    
+    .region-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .region-card-description {
+        font-size: 0.9rem;
+    }
+    
+    .region-districts {
+        grid-template-columns: 1fr;
+    }
+    
+    .regions-grid,
+    .districts-grid {
+        padding: 0.5rem;
+    }
+    
+    .region-card-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .district-count, .art-count {
+        text-align: center;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* District Styles */
+.district {
+    fill: var(--light-green);
+    stroke: var(--primary-green);
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.district:hover {
+    fill: var(--golden);
+    stroke: var(--orange-accent);
+    stroke-width: 3;
+    filter: drop-shadow(0 4px 12px rgba(218, 165, 32, 0.4));
+    transform: scale(1.02);
+}
+
+.district.active {
+    fill: var(--orange-accent);
+    stroke: var(--golden);
+    stroke-width: 4;
+    filter: drop-shadow(0 6px 20px rgba(255, 140, 66, 0.5));
+    transform: scale(1.03);
+}
+
+/* District Labels */
+.district-label {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    fill: var(--dark-text);
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.district:hover + .district-label,
+.district.active + .district-label {
+    opacity: 1;
+    font-size: 0.75rem;
+    fill: var(--primary-green);
+    font-weight: 800;
+}
+
+/* Map Container Responsive */
+@media (max-width: 1024px) {
+    .kerala-map svg {
+        max-width: 350px;
+        max-height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kerala-map {
+        padding: 1rem;
+    }
+    
+    .kerala-map svg {
+        max-width: 100%;
+        max-height: 500px;
+    }
+    
+    .district-label {
+        font-size: 0.55rem;
+    }
+    
+    .district:hover + .district-label,
+    .district.active + .district-label {
+        font-size: 0.65rem;
+    }
+    
+    .district:hover {
+        transform: scale(1.01);
+    }
+    
+    .district.active {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .kerala-map svg {
+        max-height: 400px;
+    }
+    
+    .district-label {
+        font-size: 0.5rem;
+    }
+    
+    .district:hover + .district-label,
+    .district.active + .district-label {
+        font-size: 0.6rem;
+    }
+}
+
+/* District Art Popup Styles */
+.district-art-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.district-art-popup.show {
+    opacity: 1;
+}
+
+.popup-content {
+    background: var(--cream);
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.district-art-popup.show .popup-content {
+    transform: scale(1);
+}
+
+.popup-header {
+    background: var(--primary-green);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.popup-body {
+    padding: 2rem;
+}
+
+.district-description {
+    font-size: 1.1rem;
+    color: var(--dark-text);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.art-forms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.art-form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--light-green);
+    cursor: pointer;
+    position: relative;
+}
+
+.art-form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--orange-accent);
+}
+
+.art-form-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.art-form-name {
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.art-form-action {
+    font-size: 0.9rem;
+    color: var(--orange-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.art-form-card:hover .art-form-action {
+    opacity: 1;
+}
+
+.art-form-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.art-form-name {
+    font-weight: 600;
+    color: var(--primary-green);
+    font-size: 1rem;
+}
+
+.popup-footer {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-green);
+}
+
+.view-details-btn {
+    background: var(--golden);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.view-details-btn:hover {
+    background: var(--orange-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 140, 66, 0.3);
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .popup-header {
+        padding: 1rem;
+    }
+    
+    .popup-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .popup-body {
+        padding: 1.5rem;
+    }
+    
+    .art-forms-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .art-form-card {
+        padding: 1rem;
+    }
+}
+
+/* Tooltip Styles */
+.map-tooltip {
+    position: absolute;
+    background: linear-gradient(135deg, var(--dark-text) 0%, #2c2c2c 100%);
+    color: var(--light-text);
+    padding: 0;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-width: 250px;
+    min-width: 200px;
+    overflow: hidden;
+}
+
+.map-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--dark-text);
+}
+
+/* Enhanced Tooltip Content */
+.tooltip-header {
+    background: var(--orange-accent);
+    color: white;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.tooltip-arts {
+    padding: 0.75rem;
+    background: white;
+    color: var(--dark-text);
+}
+
+.tooltip-art-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--cream);
+}
+
+.tooltip-art-item:last-child {
+    border-bottom: none;
+}
+
+.art-emoji {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.art-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.tooltip-hint {
+    background: var(--cream);
+    color: var(--dark-text);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.7rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Info Panel Animation */
+.district-info-panel {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.district-info-panel.updating {
+    opacity: 0.7;
+    transform: translateY(10px);
+}
+
+/* Art Tags Animation */
+.art-tag {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.4s ease-out forwards;
+}
+
+.art-tag:nth-child(1) { animation-delay: 0.1s; }
+.art-tag:nth-child(2) { animation-delay: 0.2s; }
+.art-tag:nth-child(3) { animation-delay: 0.3s; }
+.art-tag:nth-child(4) { animation-delay: 0.4s; }
+.art-tag:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Map Legend */
+.map-legend {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    font-size: 0.8rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid var(--primary-green);
+}
+
+.legend-color.default { background: var(--light-green); }
+.legend-color.hover { background: var(--golden); }
+.legend-color.active { background: var(--orange-accent); }
+
+/* Pulse Animation for Active District */
+@keyframes pulse {
+    0% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 6px 20px rgba(255, 140, 66, 0.5));
+    }
+    50% {
+        transform: scale(1.12);
+        filter: drop-shadow(0 8px 25px rgba(255, 140, 66, 0.7));
+    }
+    100% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 6px 20px rgba(255, 140, 66, 0.5));
+    }
+}
+
+.district.active {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Map Loading State */
+.map-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    font-size: 1.1rem;
+    color: var(--earthy-brown);
+}
+
+.map-loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--light-green);
+    border-top-color: var(--golden);
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

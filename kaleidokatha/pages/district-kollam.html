@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kollam - Gateway to Backwaters | Kaleidokatha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        .district-hero {
+            background: linear-gradient(135deg, #1e4d2b 0%, #d4af37 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .district-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .district-content {
+            position: relative;
+            z-index: 1;
+        }
+        .district-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .district-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .art-forms-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .art-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .art-card:hover {
+            transform: translateY(-10px);
+        }
+        .art-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">
+        <i class="fas fa-arrow-left"></i> Back to Map
+    </button>
+
+    <section class="district-hero">
+        <div class="container">
+            <div class="district-content">
+                <h1 class="district-title">🏖️ Kollam</h1>
+                <p class="district-subtitle">
+                    Historic port city and gateway to Kerala's enchanting backwaters
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="art-forms-section">
+        <div class="container">
+            <h2 class="section-title">Traditional Art Forms</h2>
+            <div class="art-grid">
+                <div class="art-card">
+                    <div class="art-icon">🛶</div>
+                    <h3>Boat Building</h3>
+                    <p>Traditional craftsmanship in building country boats and houseboats for the backwaters.</p>
+                </div>
+                <div class="art-card">
+                    <div class="art-icon">🏖️</div>
+                    <h3>Coastal Folk Arts</h3>
+                    <p>Traditional art forms that evolved along the coastal regions, reflecting maritime culture.</p>
+                </div>
+                <div class="art-card">
+                    <div class="art-icon">🎣</div>
+                    <h3>Fishing Traditions</h3>
+                    <p>Ancient fishing practices and songs that have been passed down through fishing communities.</p>
+                </div>
+                <div class="art-card">
+                    <div class="art-icon">🥥</div>
+                    <h3>Coir Crafts</h3>
+                    <p>Traditional coconut fiber crafts that showcase the ingenuity of local artisans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.art-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.classList.add('fade-in-up');
+            });
+        });
+    </script>
+</body>
+</html>

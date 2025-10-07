@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiruvananthapuram - Cultural Heritage | Kaleidokatha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        .district-hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .district-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .district-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .district-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--golden);
+        }
+
+        .district-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .art-forms-section {
+            padding: 4rem 0;
+            background: var(--cream);
+        }
+
+        .art-forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .art-form-detail {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .art-form-detail:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .art-form-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--primary-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .art-form-content {
+            padding: 2rem;
+        }
+
+        .art-form-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .art-form-description {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .art-form-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .art-tag {
+            background: var(--light-green);
+            color: var(--primary-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .cultural-significance {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .significance-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .significance-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-text);
+        }
+
+        .significance-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--golden);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--dark-text);
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .district-title {
+                font-size: 2rem;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 2rem;
+                align-self: flex-start;
+            }
+
+            .significance-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .art-forms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h1><a href="../index.html">Kaleidokatha</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/art-forms.html">Art Forms</a></li>
+                    <li><a href="../pages/about.html">About</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- District Hero Section -->
+    <section class="district-hero">
+        <a href="../index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Map
+        </a>
+        <div class="container">
+            <div class="district-content">
+                <h1 class="district-title">Thiruvananthapuram</h1>
+                <p class="district-subtitle">
+                    The capital city known for its classical music traditions and the magnificent Padmanabhaswamy Temple.
+                    A cultural hub where traditional arts flourish alongside modern developments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Art Forms Section -->
+    <section class="art-forms-section">
+        <div class="container">
+            <h2 class="section-title text-center">Traditional Art Forms</h2>
+            <p class="section-subtitle text-center">
+                Discover the rich cultural heritage and artistic traditions of Thiruvananthapuram
+            </p>
+
+            <div class="art-forms-grid">
+                <div class="art-form-detail">
+                    <div class="art-form-image">
+                        🎵
+                    </div>
+                    <div class="art-form-content">
+                        <h3 class="art-form-title">Swathi Thirunal Music</h3>
+                        <p class="art-form-description">
+                            A unique musical tradition established by Maharaja Swathi Thirunal, blending Carnatic music with local folk elements. 
+                            Known for its melodious compositions and intricate ragas that capture the essence of Kerala's musical heritage.
+                        </p>
+                        <div class="art-form-tags">
+                            <span class="art-tag">Classical Music</span>
+                            <span class="art-tag">Royal Heritage</span>
+                            <span class="art-tag">Carnatic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-form-detail">
+                    <div class="art-form-image">
+                        🎼
+                    </div>
+                    <div class="art-form-content">
+                        <h3 class="art-form-title">Classical Carnatic</h3>
+                        <p class="art-form-description">
+                            The southern Indian classical music tradition that has deep roots in Thiruvananthapuram. 
+                            Home to legendary musicians and composers who have shaped the Carnatic music landscape.
+                        </p>
+                        <div class="art-form-tags">
+                            <span class="art-tag">Vocal Music</span>
+                            <span class="art-tag">Instrumental</span>
+                            <span class="art-tag">Ancient Tradition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-form-detail">
+                    <div class="art-form-image">
+                        💃
+                    </div>
+                    <div class="art-form-content">
+                        <h3 class="art-form-title">Bharatanatyam</h3>
+                        <p class="art-form-description">
+                            The classical dance form that tells stories through graceful movements and expressions. 
+                            Thiruvananthapuram has numerous schools and practitioners keeping this ancient art alive.
+                        </p>
+                        <div class="art-form-tags">
+                            <span class="art-tag">Classical Dance</span>
+                            <span class="art-tag">Storytelling</span>
+                            <span class="art-tag">Temple Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-form-detail">
+                    <div class="art-form-image">
+                        🏛️
+                    </div>
+                    <div class="art-form-content">
+                        <h3 class="art-form-title">Traditional Architecture</h3>
+                        <p class="art-form-description">
+                            The distinctive Kerala architectural style seen in palaces, temples, and traditional homes. 
+                            Characterized by wooden structures, sloping roofs, and intricate carvings.
+                        </p>
+                        <div class="art-form-tags">
+                            <span class="art-tag">Wood Craft</span>
+                            <span class="art-tag">Temple Design</span>
+                            <span class="art-tag">Palace Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Significance -->
+    <section class="cultural-significance">
+        <div class="container">
+            <h2 class="section-title text-center">Cultural Significance</h2>
+            <div class="significance-content">
+                <div class="significance-text">
+                    <p>
+                        Thiruvananthapuram stands as the cultural and political heart of Kerala, where ancient traditions 
+                        seamlessly blend with modern aspirations. The city has been a patron of arts for centuries, 
+                        with the royal family actively promoting music, dance, and literature.
+                    </p>
+                    <p>
+                        The presence of the Padmanabhaswamy Temple, one of the richest temples in the world, adds to 
+                        the city's spiritual and cultural significance. The temple's architecture and rituals 
+                        preserve age-old traditions that continue to inspire artists and devotees alike.
+                    </p>
+                    <p>
+                        Today, Thiruvananthapuram continues to be a center for learning and cultural exchange, 
+                        with numerous institutions dedicated to preserving and promoting Kerala's rich artistic heritage.
+                    </p>
+                </div>
+                <div class="significance-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Years of Musical Heritage</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Cultural Institutions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Traditional Compositions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Annual Festivals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kaleidokatha</h3>
+                    <p>Celebrating the rich cultural heritage of Kerala through interactive storytelling and immersive experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/art-forms.html">Art Forms</a></li>
+                        <li><a href="../pages/about.html">About</a></li>
+                        <li><a href="../pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore Districts</h4>
+                    <ul>
+                        <li><a href="district-thiruvananthapuram.html">Thiruvananthapuram</a></li>
+                        <li><a href="district-kottayam.html">Kottayam</a></li>
+                        <li><a href="district-thrissur.html">Thrissur</a></li>
+                        <li><a href="../index.html#kerala-map">View All Districts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@kaleidokatha.com</p>
+                        <p><i class="fas fa-phone"></i> +91 471 123 4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Thiruvananthapuram, Kerala</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kaleidokatha. All rights reserved. | Preserving Kerala's Cultural Heritage</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

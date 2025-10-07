@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alappuzha - Venice of the East | Kaleidokatha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+        .district-hero {
+            background: linear-gradient(135deg, #006994 0%, var(--golden) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .district-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .district-content {
+            position: relative;
+            z-index: 1;
+        }
+        .district-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .district-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .art-forms-section {
+            padding: 4rem 0;
+        }
+        .art-form-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1rem 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .art-form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 105, 148, 0.3);
+        }
+        .art-form-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .art-form-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #006994;
+        }
+        .navigation-section {
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #006994;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        .back-button i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="district-hero">
+        <div class="container">
+            <div class="district-content animate-fadeInUp">
+                <h1 class="district-title">Alappuzha</h1>
+                <p class="district-subtitle">Venice of the East, famous for backwaters and snake boat races</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="art-forms-section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Traditional Art Forms</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="art-form-card animate-fadeInLeft">
+                        <div class="art-form-icon">🚣‍♂️</div>
+                        <h3 class="art-form-title">Nehru Trophy Boat Race</h3>
+                        <p>The most prestigious snake boat race in Kerala, featuring spectacular water sports and traditional competition.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="art-form-card animate-fadeInRight">
+                        <div class="art-form-icon">🌾</div>
+                        <h3 class="art-form-title">Coir Crafts</h3>
+                        <p>Traditional coconut fiber products and handicrafts that showcase the region's natural resource mastery.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="art-form-card animate-fadeInLeft">
+                        <div class="art-form-icon">🎵</div>
+                        <h3 class="art-form-title">Backwater Songs</h3>
+                        <p>Melodious folk songs that echo across the serene backwaters, celebrating the aquatic lifestyle.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="art-form-card animate-fadeInRight">
+                        <div class="art-form-icon">🍳</div>
+                        <h3 class="art-form-title">Traditional Cooking</h3>
+                        <p>Authentic backwater cuisine prepared in traditional methods using fresh local ingredients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="navigation-section">
+        <div class="container">
+            <a href="../index.html" class="back-button animate-fadeInUp">
+                <i class="fas fa-arrow-left"></i>
+                Back to Main Map
+            </a>
+        </div>
+    </div>
+
+    <script src="../js/animations.js"></script>
+</body>
+</html>

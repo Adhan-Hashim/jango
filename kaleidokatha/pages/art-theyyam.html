@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theyyam - Sacred Ritual Art Form | Kaleidokatha</title>
+    <meta name="description" content="Discover the divine world of Theyyam - Kerala's sacred ritual art form with videos, stories, upcoming performances, artists, and booking information.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <style>
+        :root {
+            --art-primary: #8B4513;
+            --art-secondary: #DAA520;
+            --art-accent: #FF6B35;
+            --art-dark: #2C1810;
+            --art-light: #FFF8DC;
+        }
+
+        /* Art Form Hero Section */
+        .art-hero {
+            background: linear-gradient(135deg, var(--art-primary) 0%, var(--art-dark) 100%);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .art-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/kathakali-pattern.png') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .art-hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .art-hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--art-secondary);
+        }
+
+        .art-hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .art-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .meta-item i {
+            color: var(--art-secondary);
+        }
+
+        .art-hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary-art {
+            background: var(--art-secondary);
+            color: var(--art-dark);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary-art:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3);
+        }
+
+        .btn-outline-art {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--art-secondary);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-outline-art:hover {
+            background: var(--art-secondary);
+            color: var(--art-dark);
+        }
+
+        .art-hero-visual {
+            position: relative;
+        }
+
+        .art-preview-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, var(--art-secondary), var(--art-accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-overlay:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-overlay i {
+            font-size: 2rem;
+            color: white;
+            margin-left: 4px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 4rem 0;
+            background: var(--art-light);
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--art-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .main-video {
+            position: relative;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--art-primary), var(--art-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .video-info {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--art-dark);
+        }
+
+        .video-duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-description {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--art-light);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--art-primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .story-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--art-primary);
+            margin-bottom: 1rem;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .story-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .story-image {
+            aspect-ratio: 1;
+            background: linear-gradient(45deg, var(--art-secondary), var(--art-accent));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--art-light) 0%, #FFF 100%);
+        }
+
+        .events-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-header {
+            background: linear-gradient(135deg, var(--art-primary), var(--art-dark));
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-venue {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .event-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--art-secondary);
+            color: var(--art-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .event-body {
+            padding: 1.5rem;
+        }
+
+        .event-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .detail-item i {
+            color: var(--art-primary);
+        }
+
+        .pricing {
+            background: var(--art-light);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--art-dark);
+        }
+
+        .price-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .price-option {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .price-option:hover {
+            border-color: var(--art-secondary);
+        }
+
+        .price-option.selected {
+            border-color: var(--art-primary);
+            background: var(--art-light);
+        }
+
+        .price-amount {
+            font-weight: 700;
+            color: var(--art-primary);
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .event-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-book {
+            flex: 1;
+            background: var(--art-primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-book:hover {
+            background: var(--art-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-share {
+            background: transparent;
+            color: var(--art-primary);
+            border: 2px solid var(--art-primary);
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 50px;
+        }
+
+        .btn-share:hover {
+            background: var(--art-primary);
+            color: white;
+        }
+
+        /* Artists Section */
+        .artists-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .artists-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .artist-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .artist-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--art-secondary), var(--art-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+        }
+
+        .artist-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .artist-info {
+            padding: 1.5rem;
+        }
+
+        .artist-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--art-dark);
+        }
+
+        .artist-role {
+            color: var(--art-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .artist-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .artist-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .artist-stat {
+            text-align: center;
+        }
+
+        .artist-stat-number {
+            font-weight: 700;
+            color: var(--art-primary);
+            font-size: 1.2rem;
+        }
+
+        .artist-stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .artist-contact {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .contact-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--art-light);
+            color: var(--art-primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-btn:hover {
+            background: var(--art-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--art-primary);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .art-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .art-hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .art-meta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .artists-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .back-button {
+                position: static;
+                margin: 1rem;
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="../index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Regions
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="../index.html">Kaleidokatha</a></h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../index.html#regions" class="nav-link">Regions</a>
+                <a href="art-forms.html" class="nav-link">Art Forms</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link login-nav">Login</a>
+            </div>
+            <div class="nav-hamburger" id="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Art Form Hero Section -->
+    <section class="art-hero">
+        <div class="art-hero-content">
+            <div class="art-hero-text">
+                <h1>Theyyam</h1>
+                <p class="art-hero-subtitle">
+                    Step into the sacred world of Theyyam, where performers transform into living deities through 
+                    vibrant rituals, elaborate costumes, and divine trance. This ancient art form connects the 
+                    earthly and divine realms in a spectacular display of faith and artistry.
+                </p>
+                
+                <div class="art-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Northern Kerala</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Ancient Origins</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>Ritual Performance</span>
+                    </div>
+                </div>
+
+                <div class="art-hero-actions">
+                    <a href="#video-section" class="btn-primary-art">
+                        <i class="fas fa-play"></i>
+                        Watch Performance
+                    </a>
+                    <a href="#events-section" class="btn-outline-art">
+                        <i class="fas fa-ticket-alt"></i>
+                        Book Tickets
+                    </a>
+                </div>
+            </div>
+
+            <div class="art-hero-visual">
+                <div class="art-preview-image">
+                    🔥
+                    <div class="play-overlay" onclick="scrollToSection('video-section')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video-section" class="video-section">
+        <div class="video-container">
+            <h2 class="section-title">Experience Kathakali</h2>
+            <p class="section-subtitle">
+                Immerse yourself in the art form through these carefully curated performances 
+                and behind-the-scenes content.
+            </p>
+
+            <div class="video-grid">
+                <div class="main-video">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+
+                <div class="video-info">
+                    <h3 class="video-title">Traditional Kathakali Performance</h3>
+                    <p class="video-duration">
+                        <i class="fas fa-clock"></i> 15 minutes
+                    </p>
+                    <p class="video-description">
+                        Watch a complete Kathakali performance featuring the classic story of 
+                        Nalacharitham, performed by master artists with authentic costumes 
+                        and traditional musical accompaniment.
+                    </p>
+
+                    <div class="video-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Views</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.9</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-playlist">
+                <!-- Additional video thumbnails can be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <h2 class="section-title">The Story of Kathakali</h2>
+            
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Origins and Evolution</h3>
+                    <p>
+                        Kathakali emerged in the 16th century in Kerala, evolving from earlier temple art forms 
+                        like Krishnanattam and Ramanattam. This classical dance-drama represents the pinnacle 
+                        of Kerala's performing arts, combining elements of dance, drama, music, and ritual.
+                    </p>
+                    
+                    <h3>The Art of Transformation</h3>
+                    <p>
+                        What makes Kathakali truly extraordinary is its elaborate makeup and costume tradition. 
+                        Artists spend hours applying intricate face paint that transforms them into gods, demons, 
+                        and heroes from Indian epics. Each color and design has deep symbolic meaning, 
+                        instantly conveying the character's nature to the audience.
+                    </p>
+                    
+                    <h3>Sacred Performance</h3>
+                    <p>
+                        Traditionally performed in temple courtyards under flickering oil lamps, Kathakali 
+                        creates a magical atmosphere where mythology comes alive. The performance combines 
+                        precise hand gestures (mudras), facial expressions (rasas), and rhythmic movements 
+                        to tell timeless stories from the Ramayana and Mahabharata.
+                    </p>
+                </div>
+
+                <div class="story-visual">
+                    <div class="story-image">🎨</div>
+                    <div class="story-image">👑</div>
+                    <div class="story-image">🌟</div>
+                    <div class="story-image">🕯️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section id="events-section" class="events-section">
+        <div class="events-container">
+            <h2 class="section-title">Upcoming Performances</h2>
+            <p class="section-subtitle">
+                Experience live Kathakali performances by renowned artists across Kerala and beyond.
+            </p>
+
+            <div class="events-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-badge">Featured</div>
+                        <div class="event-date">
+                            <i class="fas fa-calendar"></i>
+                            December 15, 2024 - 7:00 PM
+                        </div>
+                        <h3 class="event-title">Nalacharitham - Complete Performance</h3>
+                        <p class="event-venue">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kerala Kalamandalam, Thrissur
+                        </p>
+                    </div>
+                    
+                    <div class="event-body">
+                        <p class="event-description">
+                            Experience the complete Nalacharitham story performed by master artists 
+                            from Kerala Kalamandalam, featuring traditional music and authentic costumes.
+                        </p>
+                        
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>3 hours</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-language"></i>
+                                <span>Malayalam</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>300 seats</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>Master Artists</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing">
+                            <div class="pricing-title">Ticket Prices</div>
+                            <div class="price-options">
+                                <div class="price-option" onclick="selectPrice(this)">
+                                    <div class="price-amount">₹500</div>
+                                    <div class="price-label">Standard</div>
+                                </div>
+                                <div class="price-option selected" onclick="selectPrice(this)">
+                                    <div class="price-amount">₹800</div>
+                                    <div class="price-label">Premium</div>
+                                </div>
+                                <div class="price-option" onclick="selectPrice(this)">
+                                    <div class="price-amount">₹1200</div>
+                                    <div class="price-label">VIP</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-actions">
+                            <button class="btn-book" onclick="bookTickets('kathakali-dec-15')">
+                                <i class="fas fa-ticket-alt"></i>
+                                Book Now
+                            </button>
+                            <button class="btn-share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-badge">Workshop</div>
+                        <div class="event-date">
+                            <i class="fas fa-calendar"></i>
+                            December 20-22, 2024
+                        </div>
+                        <h3 class="event-title">Kathakali Makeup Workshop</h3>
+                        <p class="event-venue">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Cultural Center, Kochi
+                        </p>
+                    </div>
+                    
+                    <div class="event-body">
+                        <p class="event-description">
+                            Learn the ancient art of Kathakali makeup from master makeup artists. 
+                            This hands-on workshop covers traditional techniques and symbolic meanings.
+                        </p>
+                        
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>3 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-language"></i>
+                                <span>English/Malayalam</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>20 participants</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certificate</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing">
+                            <div class="pricing-title">Workshop Fee</div>
+                            <div class="price-options">
+                                <div class="price-option selected" onclick="selectPrice(this)">
+                                    <div class="price-amount">₹3500</div>
+                                    <div class="price-label">All Inclusive</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-actions">
+                            <button class="btn-book" onclick="bookTickets('makeup-workshop-dec')">
+                                <i class="fas fa-paint-brush"></i>
+                                Register Now
+                            </button>
+                            <button class="btn-share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-badge">Special</div>
+                        <div class="event-date">
+                            <i class="fas fa-calendar"></i>
+                            January 5, 2025 - 6:30 PM
+                        </div>
+                        <h3 class="event-title">Ramayana Spectacular</h3>
+                        <p class="event-venue">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Tagore Theatre, Thiruvananthapuram
+                        </p>
+                    </div>
+                    
+                    <div class="event-body">
+                        <p class="event-description">
+                            A grand presentation of selected episodes from the Ramayana, featuring 
+                            multiple artists and a full traditional orchestra in this special New Year performance.
+                        </p>
+                        
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>4 hours</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-language"></i>
+                                <span>Malayalam</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>500 seats</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-award"></i>
+                                <span>Award Winners</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing">
+                            <div class="pricing-title">Ticket Prices</div>
+                            <div class="price-options">
+                                <div class="price-option" onclick="selectPrice(this)">
+                                    <div class="price-amount">₹750</div>
+                                    <div class="price-label">Standard</div>
+                                </div>
+                                <div class="price-option selected" onclick="selectPrice(this)">
+                                    <div class="price-amount">₹1200</div>
+                                    <div class="price-label">Premium</div>
+                                </div>
+                                <div class="price-option" onclick="selectPrice(this)">
+                                    <div class="price-amount">₹2000</div>
+                                    <div class="price-label">VIP</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-actions">
+                            <button class="btn-book" onclick="bookTickets('ramayana-jan-5')">
+                                <i class="fas fa-ticket-alt"></i>
+                                Book Now
+                            </button>
+                            <button class="btn-share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artists Section -->
+    <section class="artists-section">
+        <div class="artists-container">
+            <h2 class="section-title">Master Artists</h2>
+            <p class="section-subtitle">
+                Meet the legendary performers who keep the tradition of Kathakali alive through their artistry and dedication.
+            </p>
+
+            <div class="artists-grid">
+                <!-- Artist 1 -->
+                <div class="artist-card">
+                    <div class="artist-image">
+                        👑
+                        <div class="artist-badge">Guru</div>
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">Padma Shri Kalamandalam Ramankutty Nair</h3>
+                        <p class="artist-role">Kathakali Maestro</p>
+                        <p class="artist-description">
+                            A legendary figure in Kathakali with over 50 years of performance experience. 
+                            Known for his powerful portrayals of heroic and divine characters.
+                        </p>
+                        
+                        <div class="artist-stats">
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">50+</div>
+                                <div class="artist-stat-label">Years</div>
+                            </div>
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">200+</div>
+                                <div class="artist-stat-label">Roles</div>
+                            </div>
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">5000+</div>
+                                <div class="artist-stat-label">Shows</div>
+                            </div>
+                        </div>
+
+                        <div class="artist-contact">
+                            <button class="contact-btn" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <button class="contact-btn" title="Phone">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="contact-btn" title="Website">
+                                <i class="fas fa-globe"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist 2 -->
+                <div class="artist-card">
+                    <div class="artist-image">
+                        🎭
+                        <div class="artist-badge">Master</div>
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">Kalamandalam Gopi</h3>
+                        <p class="artist-role">Character Artist</p>
+                        <p class="artist-description">
+                            Renowned for his exceptional portrayal of female characters (stree vesham) 
+                            and anti-heroic roles. A versatile performer with international acclaim.
+                        </p>
+                        
+                        <div class="artist-stats">
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">45+</div>
+                                <div class="artist-stat-label">Years</div>
+                            </div>
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">150+</div>
+                                <div class="artist-stat-label">Roles</div>
+                            </div>
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">4000+</div>
+                                <div class="artist-stat-label">Shows</div>
+                            </div>
+                        </div>
+
+                        <div class="artist-contact">
+                            <button class="contact-btn" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <button class="contact-btn" title="Phone">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="contact-btn" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist 3 -->
+                <div class="artist-card">
+                    <div class="artist-image">
+                        🌟
+                        <div class="artist-badge">Rising Star</div>
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">Kalamandalam Bineesh</h3>
+                        <p class="artist-role">Young Performer</p>
+                        <p class="artist-description">
+                            A promising young artist trained in the traditional gurukula system. 
+                            Specializes in heroic roles and has won several state-level awards.
+                        </p>
+                        
+                        <div class="artist-stats">
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">15+</div>
+                                <div class="artist-stat-label">Years</div>
+                            </div>
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">75+</div>
+                                <div class="artist-stat-label">Roles</div>
+                            </div>
+                            <div class="artist-stat">
+                                <div class="artist-stat-number">1500+</div>
+                                <div class="artist-stat-label">Shows</div>
+                            </div>
+                        </div>
+
+                        <div class="artist-contact">
+                            <button class="contact-btn" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <button class="contact-btn" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="contact-btn" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌺 Kaleidokatha</h3>
+                    <p>Preserving and celebrating Kerala's rich cultural heritage through immersive digital experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Art Forms</h4>
+                    <ul>
+                        <li><a href="art-kathakali.html">Kathakali</a></li>
+                        <li><a href="art-theyyam.html">Theyyam</a></li>
+                        <li><a href="art-mohiniyattam.html">Mohiniyattam</a></li>
+                        <li><a href="art-forms.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Booking</h4>
+                    <ul>
+                        <li><a href="#events-section">Upcoming Shows</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="private-shows.html">Private Performances</a></li>
+                        <li><a href="booking-help.html">Booking Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                        <li><a href="artists.html">For Artists</a></li>
+                        <li><a href="partnerships.html">Partnerships</a></li>
+                        <li><a href="media.html">Media Enquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kaleidokatha. Celebrating Kerala's Cultural Heritage with Love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scrolling for anchor links
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Price selection functionality
+        function selectPrice(element) {
+            // Remove selected class from siblings
+            const siblings = element.parentNode.children;
+            for (let sibling of siblings) {
+                sibling.classList.remove('selected');
+            }
+            // Add selected class to clicked element
+            element.classList.add('selected');
+        }
+
+        // Booking functionality
+        function bookTickets(eventId) {
+            // Get selected price
+            const priceOptions = event.target.closest('.event-card').querySelectorAll('.price-option');
+            let selectedPrice = null;
+            
+            priceOptions.forEach(option => {
+                if (option.classList.contains('selected')) {
+                    selectedPrice = option.querySelector('.price-amount').textContent;
+                }
+            });
+
+            // Simulate booking process
+            if (selectedPrice) {
+                alert(`Redirecting to booking page for ${eventId}\nSelected price: ${selectedPrice}\n\nThis would connect to a real booking system.`);
+                // In a real application, this would redirect to a booking form
+                // window.location.href = `booking.html?event=${eventId}&price=${selectedPrice}`;
+            } else {
+                alert('Please select a ticket price first.');
+            }
+        }
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('nav-hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+
+        // Video placeholder click functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoPlaceholder = document.querySelector('.video-placeholder');
+            if (videoPlaceholder) {
+                videoPlaceholder.addEventListener('click', function() {
+                    // In a real application, this would load and play the actual video
+                    alert('Video player would load here.\n\nThis would integrate with a video platform like YouTube, Vimeo, or a custom video solution.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
